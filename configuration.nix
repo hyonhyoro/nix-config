@@ -46,6 +46,7 @@
     aspell
     aspellDicts.en
     yaskkserv
+    irony-server
     ctags
     rtags
     ## git
@@ -172,6 +173,7 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.firefox.enableAdobeFlash = true;
   nixpkgs.config.packageOverrides = pkgs: {
+    irony-server = pkgs.callPackage ./custom/irony-server { };
     yaskkserv = pkgs.callPackage ./custom/yaskkserv { };
 
     ncmpcpp = pkgs.ncmpcpp.override {
