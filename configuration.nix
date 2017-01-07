@@ -45,6 +45,7 @@
     emacs
     aspell
     aspellDicts.en
+    yaskkserv
     ctags
     rtags
     ## git
@@ -171,6 +172,8 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.firefox.enableAdobeFlash = true;
   nixpkgs.config.packageOverrides = pkgs: {
+    yaskkserv = pkgs.callPackage ./custom/yaskkserv { };
+
     ncmpcpp = pkgs.ncmpcpp.override {
       outputsSupport = true;
       visualizerSupport = true;
